@@ -11,7 +11,7 @@ new AwsCodepipelineProjectStack(app, 'AwsCodepipelineProjectStack', {
   
   env: {
     account: "205633759295",    // replace with your aws account ID
-    region: "ap-south-1",       // replace with your preferred region
+    region: "us-east-1",       // replace with your preferred region
   },
 
 });
