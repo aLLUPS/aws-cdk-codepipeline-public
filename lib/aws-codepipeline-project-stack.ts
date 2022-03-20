@@ -23,7 +23,7 @@ export class AwsCodepipelineProjectStack extends cdk.Stack {
     // add the following code snippet to pass the stage
 
     const testStage = pipeline.addStage(new CDKPipelineStage(this, "test", {
-      env: { account:"205633759295", region: "use-east-1"}            //replace this with your aws-account-id and aws-region
+      env: { account:"205633759295", region: "us-east-1"}            //replace this with your aws-account-id and aws-region
     }));
 
     testStage.addPost(new ManualApprovalStep('Manaul approval step'));
