@@ -1,14 +1,31 @@
-# Welcome to your CDK TypeScript project
+# Welcome to CI/CD With AWS CodePipeline
+## How To Create a Deployment Pipeline for a CDK App Using AWS CodePipeline and GitHub
 
-This is a blank project for TypeScript development with CDK.
-
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+Medium article link: 
 
 ## Useful commands
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `cdk deploy`      deploy this stack to your default AWS account/region
-* `cdk diff`        compare deployed stack with current state
-* `cdk synth`       emits the synthesized CloudFormation template
+1. Download and install AWS CLI
+    https://docs.aws.amazon.com/cli/v1/userguide/install-windows.html#install-msi-on-windows
+
+2. Install cdk
+* `npm i aws-cdk@2.17.0`
+
+3. To configure the AWS Account and CDK:
+(To create Iam User: https://cdkworkshop.com/15-prerequisites/200-account.html#administrator-user)
+(To configure the AWS credentials: https://cdkworkshop.com/15-prerequisites/200-account.html#configure-your-credentials)
+
+### After cloning the repo:
+
+1. Install node modules:
+* `npm install`
+
+2. Modify the following files according to the comments given.
+    - aws-codepipeline-project.ts
+    - aws-codepipeline-project-stack.ts
+
+3. To bootstrap the environment (to create cdk.out):
+* `cdk bootstrap`
+
+4. To deploy the pipeline:
+* `cdk deploy`

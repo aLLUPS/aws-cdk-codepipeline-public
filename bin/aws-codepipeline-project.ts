@@ -10,8 +10,8 @@ new AwsCodepipelineProjectStack(app, 'AwsCodepipelineProjectStack', {
   // it is this section wehere we can all the details of the cdk pipeline
   
   env: {
-    account: "205633759295",    // replace with your aws account ID
-    region: "us-east-1",       // replace with your preferred region
+    account: "AWS_ACCOUNT_ID",    // replace with your aws account ID
+    region: "AWS_REGION",       // replace with your preferred region
   },
 
 });

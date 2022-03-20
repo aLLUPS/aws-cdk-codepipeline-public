@@ -13,7 +13,7 @@ export class AwsCodepipelineProjectStack extends cdk.Stack {
     const pipeline = new CodePipeline(this, 'Pipeline', {
       pipelineName: 'CDKTestPipeline',       
       synth: new ShellStep('Synth', {        
-        input: CodePipelineSource.gitHub('aLLUPS/aws-codepipeline-project', 'main'), 
+        input: CodePipelineSource.gitHub('GITHUB_USERNAME/GITHUB_REPOSITORY_NAME', 'main'), // replace this with your github user name and repo name
         commands: ['npm ci',
                    'npm run build',
                    'npx cdk synth']
@@ -23,13 +23,13 @@ export class AwsCodepipelineProjectStack extends cdk.Stack {
     // add the following code snippet to pass the stage
 
     const testStage = pipeline.addStage(new CDKPipelineStage(this, "test", {
-      env: { account:"205633759295", region: "us-east-1"}            //replace this with your aws-account-id and aws-region
+      env: { account:"YOUR_AWS_ACCOUNT_ID", region: "YOUR_AWS_REGION"}            //replace this with your aws-account-id and aws-region
     }));
 
     testStage.addPost(new ManualApprovalStep('Manaul approval step'));
 
     const productionStage = pipeline.addStage(new CDKPipelineStage(this, "production", {
-      env: { account:"205633759295", region: "us-east-1"}            //replace this with your aws-account-id and aws-region
+      env: { account:"YOUR_AWS_ACCOUNT_ID", region: "YOUR_AWS_REGION"}             //replace this with your aws-account-id and aws-region
     }));
   }
 }
